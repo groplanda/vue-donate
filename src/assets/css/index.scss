@@ -130,6 +130,8 @@ body {
     }
   }
   &__slider-item {
+    display: flex;
+    flex-direction: column;
     position: relative;
     padding-bottom: 27px;
     margin-bottom: 76px;
@@ -409,13 +411,6 @@ body {
       left: 0;
     }
   }
-  &__content-body {
-    height: 394px;
-    .donate__content-body-inner {
-      padding-right: 0 !important;
-      padding-bottom: 0 !important;
-    }
-  }
   .scroll-wrap {
     background: $light-blue;
     width: 5px;
@@ -531,6 +526,23 @@ body {
         }
       }
     }
+    &__slider-item-pic {
+      order: 0;
+    }
+    &__slider-item-tags {
+      order: 1;
+      margin-bottom: 21px;
+    }
+    &__slider-item-title {
+      order: 2;
+    }
+    &__slider-item-description {
+      order: 3;
+    }
+    &__slider-item-info {
+      order: 4;
+      margin-bottom: 0;
+    }
   }
   .donate {
     padding-bottom: 80px;
@@ -555,9 +567,6 @@ body {
     &__peoples-slider-arrow {
       bottom: auto;
       top: 24px;
-    }
-    &__content-body {
-      height: 302px;
     }
   }
 }
@@ -630,6 +639,13 @@ body {
       background-image: url(../images/icon/like.svg), linear-gradient(180deg, #E3D1A0 0.52%, #A79156 100%);
       background-repeat: no-repeat;
       background-position: center bottom;
+    }
+  }
+}
+@media (min-width: 365px) and (max-width: 411px) {
+  .projects {
+    &__slider-item {
+      margin-bottom: 59px;
     }
   }
 }

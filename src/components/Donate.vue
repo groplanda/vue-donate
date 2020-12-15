@@ -51,13 +51,7 @@
           <!--peoples end-->
           <div class="donate__content">
             <!--content start-->
-
-            <v-bar
-              wrapper="donate__content-body"
-              vBar="scroll-wrap"
-              vBarInternal="scroll-track"
-            >
-            <div class="donate__content-body-inner">
+            <div class="donate__content-body">
               <p class="donate__content-description">
                 один из пяти столпов ислама, обязательный ежегодный налог в исламском праве,
                 выплачиваемый с различного вида доходов и имущества (движимого и недвижимого)
@@ -71,7 +65,6 @@
                 <button class="donate__content-button">Расчитать закят</button>
               </div>
             </div>
-            </v-bar>
 
             <!--content end-->
           </div>
@@ -80,10 +73,8 @@
   </section>
 </template>
 <script>
-import VBar from 'v-bar'
 export default {
   name: 'Donate',
-  components: { VBar },
   mounted() {
     const slider = document.querySelector('.donate__peoples-slider'),
           slides = slider.querySelectorAll('.donate__peoples-slider-item');
@@ -95,6 +86,10 @@ export default {
         slider.prepend(slides[0]);
       }
     }, false);
+
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+      slider.prepend(slides[1]);
+    }
   }
 }
 </script>
